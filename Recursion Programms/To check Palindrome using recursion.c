@@ -9,7 +9,7 @@ int main()
 	char a[20];
 
 	printf("Enter the number to check if it is palindrome or not\n");
-	scanf("%s",&a);
+	scanf("%s",a);
 	k=strlen(a);
 	e=p(a,k-1,n);
 	if(e==1)
@@ -19,6 +19,23 @@ int main()
 	else
 	{
 		printf("it is palindrome\n");
+	}
+	return 0;
+}
+
+int p(char a[],int k,int n)
+{
+	char *t;
+	t=a;
+	if(k<n) // Base condition 
+		return 0;
+	else if (a[n] == a[k])
+	{
+		return p(t,t-1,n+1); //function calls itself
+	}
+	else
+	{
+		return 1;
 	}
 }
 
